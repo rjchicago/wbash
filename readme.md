@@ -11,8 +11,12 @@ This demo uses:
 ## Demo
 
 ``` sh
-git clone https://github.com/rjchicago/wbash.git
-cd wbash
+# clone
+git clone https://github.com/rjchicago/wbash.git && cd wbash
+
+# run
 docker-compose up -d
+
+# open
 open http://localhost:8080/
 ```
