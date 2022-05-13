@@ -13,5 +13,5 @@ COPY styles ./styles
 COPY src ./src
 RUN npm run build
 
-EXPOSE 4200
+EXPOSE 8080
 CMD [ "npm", "run", "start" ]

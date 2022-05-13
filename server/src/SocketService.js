@@ -2,7 +2,7 @@ const socketIO = require("socket.io");
 const PTYService = require("./PTYService");
 
 const cors = {
-  origin: "http://localhost:4200",
+  origin: "http://localhost:8080",
   methods: ["GET", "POST"]
 };
 

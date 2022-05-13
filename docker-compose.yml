@@ -10,9 +10,10 @@ services:
     volumes:
       - "./client/package.json:/usr/app/package.json"
       - "./client/index.html:/usr/app/index.html"
+      - "./client/styles:/usr/app/styles"
       - "./client/src:/usr/app/src"
     ports:
-      - "4200:4200"
+      - "8080:8080"
   server:
     image: wbash-server
     container_name: wbash-server
@@ -20,7 +21,6 @@ services:
     build: 
       context: ./server
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
       - "./server/package.json:/usr/app/package.json"
       - "./server/src:/usr/app/src"
     ports:

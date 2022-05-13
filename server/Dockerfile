@@ -1,7 +1,6 @@
 FROM node:18-alpine
 
-RUN apk add --update docker openrc bash python3 make g++
-RUN rc-update add docker boot
+RUN apk add --update bash python3 make g++
 
 WORKDIR /usr/app
 
