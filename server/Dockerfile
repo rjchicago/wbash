@@ -1,6 +1,7 @@
 FROM node:18-alpine
 
-RUN apk add --update bash python3 make g++
+RUN apk add --update bash python3 make g++ \
+    && rm -rf /var/cache/apk/*
 
 WORKDIR /usr/app
 

@@ -1,8 +1,10 @@
 const socketIO = require("socket.io");
 const PTYService = require("./PTYService");
 
+const clientAddress = process.env.CLIENT_ADDRESS;
+
 const cors = {
-  origin: "http://localhost:8080",
+  origin: clientAddress,
   methods: ["GET", "POST"]
 };
 

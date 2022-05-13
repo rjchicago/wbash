@@ -1,7 +1,7 @@
 import { TerminalUI } from "./TerminalUI";
 import io from "socket.io-client";
 
-const serverAddress = "http://localhost:3000";
+const serverAddress = process.env.SERVER_ADDRESS;
 
 function connect(serverAddress) {
   return new Promise(res => {

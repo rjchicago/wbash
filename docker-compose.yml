@@ -1,12 +1,14 @@
 version: '3.8'
 services:
   client:
-    image: wbash-client
+    image: rjchicago/wbash-client:${VERSION:-latest}
     container_name: wbash-client
     build: 
       context: ./client
     depends_on:
       - server
+    environment:
+      - SERVER_ADDRESS=http://localhost:3000
     volumes:
       - "./client/package.json:/usr/app/package.json"
       - "./client/index.html:/usr/app/index.html"
@@ -15,11 +17,13 @@ services:
     ports:
       - "8080:8080"
   server:
-    image: wbash-server
+    image: rjchicago/wbash-server:${VERSION:-latest}
     container_name: wbash-server
     command: npm run debug
     build: 
       context: ./server
+    environment:
+      - CLIENT_ADDRESS=http://localhost:8080
     volumes:
       - "./server/package.json:/usr/app/package.json"
       - "./server/src:/usr/app/src"
