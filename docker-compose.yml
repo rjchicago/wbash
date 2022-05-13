@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  client:
+    image: wbash-client
+    container_name: wbash-client
+    build: 
+      context: ./client
+    depends_on:
+      - server
+    volumes:
+      - "./client/package.json:/usr/app/package.json"
+      - "./client/index.html:/usr/app/index.html"
+      - "./client/src:/usr/app/src"
+    ports:
+      - "4200:4200"
+  server:
+    image: wbash-server
+    container_name: wbash-server
+    command: npm run debug
+    build: 
+      context: ./server
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./server/package.json:/usr/app/package.json"
+      - "./server/src:/usr/app/src"
+    ports:
+      - "3000:3000"
+      - "9229:9229"

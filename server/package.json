@@ -1,0 +1,17 @@
+{
+  "name": "wbash-server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "debug": "nodemon --inspect=0.0.0.0:9229 ./src/index.js",
+    "eslint": "eslint '**/*.js' --fix"
+  },
+  "dependencies": {
+    "socket.io": "^4.5.0",
+    "node-pty": "^0.10.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.7",
+    "nodemon": "^2.0"
+  }
+}
