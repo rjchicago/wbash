@@ -3,7 +3,7 @@ const pty = require("node-pty");
 
 class PTY {
   constructor(socket) {
-    this.shell = os.platform() === "win32" ? "powershell.exe" : "sh";
+    this.shell = os.platform() === "win32" ? "powershell.exe" : "sh"; // or "bash"
     this.ptyProcess = pty.spawn(this.shell, [], {
       name: "xterm-color",
       cwd: "/",

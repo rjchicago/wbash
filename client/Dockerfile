@@ -9,6 +9,7 @@ COPY package*.json ./
 RUN npm i
 
 COPY index.html ./
+COPY styles ./styles
 COPY src ./src
 RUN npm run build
 
