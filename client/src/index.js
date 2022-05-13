@@ -3,7 +3,7 @@ import io from "socket.io-client";
 
 const serverAddress = "http://localhost:3000";
 
-function connectToSocket(serverAddress) {
+function connect(serverAddress) {
   return new Promise(res => {
     const socket = io(serverAddress);
     res(socket);
@@ -12,7 +12,7 @@ function connectToSocket(serverAddress) {
 
 function start() {
   const container = document.getElementById("terminal-container");
-  connectToSocket(serverAddress).then(socket => new TerminalUI().attach(socket, container));
+  connect(serverAddress).then(socket => new TerminalUI(socket, container));
 }
 
 start();
