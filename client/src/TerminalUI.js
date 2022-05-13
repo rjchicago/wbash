@@ -1,5 +1,5 @@
 import { Terminal } from "xterm";
-import "xterm/css/xterm.css"; // DO NOT forget importing xterm.css
+import "xterm/css/xterm.css";
 
 export class TerminalUI {
   constructor() {
